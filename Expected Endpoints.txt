@@ -1,0 +1,51 @@
+Organization Onboarding Module:
+POST /api/organizations/ : Create a new organization (for manual addition).
+POST /api/organizations/register/ : Register a new organization (for self-service registration).
+
+User Manager:
+POST /api/users/ : Create a new user account.
+PUT /api/users/{id}/ : Update an existing user account.
+DELETE /api/users/{id}/ : Delete a user account.
+POST /api/users/{id}/roles/ : Assign roles to a user.
+GET /api/users/{id}/roles/ : Get roles assigned to a user.
+
+Data Capture Module:
+POST /api/farmer-details/ : Submit farmer details.
+
+Customer (Farmer) Creation Module:
+POST /api/farmers/ : Create a new farmer profile.
+PUT /api/farmers/{id}/ : Update an existing farmer profile.
+DELETE /api/farmers/{id}/ : Delete a farmer profile.
+Billing and Invoicing Module:
+POST /api/invoices/ : Generate invoices automatically.
+
+Payments Module:
+POST /api/payments/ : Make a payment.
+
+Service Type Module:
+GET /api/investigation-types/ : Get all investigation types and their associated costs.
+
+Lab Investigation Module:
+POST /api/investigations/ : Submit an investigation request.
+PUT /api/investigations/{id}/ : Update the status of an investigation request.
+GET /api/investigations/{id}/ : Get details of a specific investigation.
+
+Result Module:
+POST /api/investigations/{id}/results/ : Add recommendations to investigation results.
+
+Result Distribution Module:
+POST /api/results/distribute/ : Distribute investigation results to clients via preferred methods.
+
+Data Warehouse and Report Engine Module:
+GET /api/reports/ : Generate reports for data analysis.
+
+Data Visualization Module and Dashboard:
+GET /api/dashboard/ : Get data for generating visualizations and metrics.
+
+Settings and Configuration Module:
+GET /api/settings/ : Get platform settings for customization.
+PUT /api/settings/ : Update platform settings.
+
+Notification Module:
+GET /api/notifications/ : Get notifications for users.
+POST /api/notifications/ : Send notifications to users.
