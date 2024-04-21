@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from med_farm import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('organisation/', views.organisation_list),
+    path('organisation/<int:id>', views.organisation_detail),
 ]
