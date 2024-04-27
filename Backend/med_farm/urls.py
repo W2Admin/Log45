@@ -1,11 +1,13 @@
 from django.contrib import admin
-from django.urls import path
-from django.urls import path, include 
-from med_farm import views
+from django.urls import path, include, re_path
+from django.views.generic import TemplateView
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/organisation/', views.organisation_list),
-    path('api/organisation/<int:id>', views.organisation_detail),
-    path('api/', include('user.urls')),
+    # path('admin/', admin.site.urls),
+    path('api/', include('djoser.urls')),
+    path('api/', include('djoser.urls.jwt')),
+    path('api/', include('organisations.urls')),
 ]
+
+urlpatterns += [re_path(r'^.*', TemplateView.as_view(template_name='index.html'))]
