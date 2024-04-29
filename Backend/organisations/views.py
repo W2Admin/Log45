@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 class OrganisationListCreateView(generics.ListCreateAPIView):
     queryset = Organisation.objects.all()
     serializer_class = OrganisationSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -24,7 +24,7 @@ organisation_list = OrganisationListCreateView.as_view()
 class OrganisationRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Organisation.objects.all()
     serializer_class = OrganisationSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     lookup_field = 'id'
 
     def delete(self, request, *args, **kwargs):
